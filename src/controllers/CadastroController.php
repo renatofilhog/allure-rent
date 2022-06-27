@@ -78,4 +78,22 @@ class CadastroController extends Controller {
             $this->render('faliedCadastro');
         }
     }
+
+    public function equipamentoAction(){
+        $descricao = filter_input(INPUT_POST, 'descricao');
+        $serial = filter_input(INPUT_POST, 'serial');
+        $tpequip = filter_input(INPUT_POST, 'tpequip');
+        // Checa duplicidade
+        $data = Equipamentos::select()->where('serial', $serial)->execute();
+        if(count($data) == 0){
+            Equipamentos::insert([
+                'descricao' => $descricao,
+                'serial' => $serial,
+                'id_tipo' => $tpequip
+            ])->execute();
+            $this->render('sucessoCadastro');
+        } else {
+            $this->render('faliedCadastro');
+        }
+    }
 }

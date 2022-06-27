@@ -2,6 +2,6 @@
 namespace src\models;
 use \core\Model;
 
-class Pessoa extends Model {
+class Equipamentos extends Model {
 
 }
