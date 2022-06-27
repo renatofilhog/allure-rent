@@ -17,3 +17,4 @@ $router->get('/cadastro/equipamento', 'CadastroController@equipamento');
  */
 $router->post('/cadastro/tpequip', 'CadastroController@tpequipAction');
 $router->post('/cadastro/setor', 'CadastroController@setorAction');
+$router->post('/cadastro/pessoa', 'CadastroController@pessoaAction');

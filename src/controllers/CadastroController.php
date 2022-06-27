@@ -4,6 +4,8 @@ namespace src\controllers;
 use \core\Controller;
 use \src\models\Setor;
 use \src\models\Tipo_equipamento;
+use \src\models\Pessoa;
+use \src\models\Equipamentos;
 class CadastroController extends Controller {
 
     public function tpequip() {
@@ -59,4 +61,21 @@ class CadastroController extends Controller {
         }
     }
 
+    public function pessoaAction(){
+        $nome = filter_input(INPUT_POST, 'nome');
+        $telefone = filter_input(INPUT_POST, 'telefone');
+        $setor = filter_input(INPUT_POST, 'setor');
+        // Checa duplicidade
+        $data = Pessoa::select()->where('nome', $nome)->execute();
+        if(count($data) == 0){
+            Pessoa::insert([
+                'nome' => $nome,
+                'telefone' => $telefone,
+                'id_setor' => $setor
+            ])->execute();
+            $this->render('sucessoCadastro');
+        } else {
+            $this->render('faliedCadastro');
+        }
+    }
 }
