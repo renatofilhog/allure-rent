@@ -26,11 +26,11 @@
             </div>
             <div class="form-group datesDevolucao">
                 <span>Data Devolução</span>
-                <input name="data_limite" type="date" class="form-control form-control-user"
+                <input required name="data_limite" type="date" class="form-control form-control-user"
                     placeholder="Insira a data de devolução">
-                <span>Hora Devolução</span>
-                <input name="hora_limite" type="time" class="form-control form-control-user"
-                    placeholder="Hora devolução">
+                <span style="margin-left:20px">Hora Devolução</span>
+                <input required name="hora_limite" type="time" class="form-control form-control-user"
+                    placeholder="Hora da devolução (MAX)">
             </div>
             <input type="submit" class="btn btn-primary btn-user btn-block"
                 value="Alugar equipamento">
