@@ -16,3 +16,4 @@ $router->get('/cadastro/equipamento', 'CadastroController@equipamento');
  * Rotas para actions
  */
 $router->post('/cadastro/tpequip', 'CadastroController@tpequipAction');
+$router->post('/cadastro/setor', 'CadastroController@setorAction');

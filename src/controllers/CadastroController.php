@@ -48,10 +48,10 @@ class CadastroController extends Controller {
 
     public function setorAction(){
         $nome = filter_input(INPUT_POST, 'nome');
-        $data = Tipo_equipamento::select()->where('nome_tipo', $nome)->execute();
+        $data = Setor::select()->where('nome_setor', $nome)->execute();
         if(count($data) == 0){
-            Tipo_equipamento::insert([
-                'nome_tipo' => $nome
+            Setor::insert([
+                'nome_setor' => $nome
             ])->execute();
             $this->render('sucessoCadastro');
         } else {
