@@ -37,8 +37,10 @@
     <!-- Page level custom scripts -->
     <script src="/allure-rent/src/views/assets/js/demo/chart-area-demo.js"></script>
     <script src="/allure-rent/src/views/assets/js/demo/chart-pie-demo.js"></script>
-    <script src="https://unpkg.com/imask"></script>
 
+    <!-- Custom JS -->
+    <script src="https://unpkg.com/imask"></script>
+    <script src="/allure-rent/src/views/assets/js/template.js"></script>
  
 </body>
 

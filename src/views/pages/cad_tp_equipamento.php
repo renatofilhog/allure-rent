@@ -4,14 +4,13 @@
     <div class="container-fluid">
         <h1>Cadastro de Tipo de Equipamento</h1>
         <hr>
-        <form class="cadastro user">
+        <form class="cadastro user" method="POST" action="<?=$base;?>/cadastro/tpequip">
             <div class="form-group">
-                <input type="email" class="form-control form-control-user"
+                <input type="text" maxlength="100" class="form-control form-control-user"
+                    name="nome"
                     placeholder="Insira o nome do tipo de equipamento">
             </div>
-            <a href="index.html" class="btn btn-primary btn-user btn-block">
-                Cadastrar
-            </a>
+            <input type="submit" value="Cadastrar" class="btn btn-primary btn-user btn-block">
             <hr>
         </form>
     </div>

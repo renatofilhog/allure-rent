@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/allure-rent/src/views/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/allure-rent/src/views/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -66,10 +67,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cadastro de:</h6>
-                        <a class="collapse-item" href="buttons.html">Equipamento</a>
+                        <a class="collapse-item" href="<?=$base;?>/cadastro/equipamento">Equipamento</a>
                         <a class="collapse-item" href="<?=$base;?>/cadastro/tpequip">Tipo de Equipamento</a>
                         <a class="collapse-item" href="<?=$base;?>/cadastro/setor">Setor</a>
-                        <a class="collapse-item" href="cards.html">Pessoa</a>
+                        <a class="collapse-item" href="<?=$base;?>/cadastro/pessoa">Pessoa</a>
                     </div>
                 </div>
             </li>
