@@ -86,7 +86,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Realizar > </h6>
-                        <a class="collapse-item" href="utilities-color.html">Aluguel</a>
+                        <a class="collapse-item" href="<?=$base;?>/movimento/aluguel">Aluguel</a>
                         <a class="collapse-item" href="utilities-border.html">Devolução</a>
                     </div>
                 </div>

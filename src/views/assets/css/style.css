@@ -1,4 +1,4 @@
-.setor, .tpequip {
+.setor, .tpequip, .datesDevolucao {
     display: flex;
     align-items: center;
 }
@@ -15,4 +15,10 @@
     padding: 0.4rem 1rem;
     color: #6e707e;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.datesDevolucao span {
+    width: 50px;
+}
+.datesDevolucao input {
+    flex: 1;
 }
