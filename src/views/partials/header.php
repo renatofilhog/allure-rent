@@ -9,7 +9,7 @@
     <meta name="description" content="Alugueis de Equipamentos">
     <meta name="author" content="Renato">
 
-    <title>AllureRent</title>
+    <title>Allure-Rent</title>
 
     <!-- Custom fonts for this template-->
     <link href="/allure-rent/src/views/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,7 +20,8 @@
     <!-- Custom styles for this template-->
     <link href="/allure-rent/src/views/assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/allure-rent/src/views/assets/css/style.css" rel="stylesheet">
-
+    <!-- Custom styles for DataTables -->
+    <link href="/allure-rent/src/views/assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -36,7 +37,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">AllureRent</div>
+                <div class="sidebar-brand-text mx-3">Allure-Rent</div>
             </a>
 
             <!-- Divider -->
@@ -110,8 +111,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Consulta de ></h6>
-                        <a class="collapse-item" href="login.html">Aluguéis Pendentes</a>
-                        <a class="collapse-item" href="register.html">Aluguel</a>
+                        <a class="collapse-item" href="<?=$base?>/busca/pendentes">Aluguéis Pendentes</a>
+                        <a class="collapse-item" href="404">Aluguel (Manutenção)</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -163,8 +164,8 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <p>Administrador</p>
-
+                    <p style='padding-top:10px'>Sistema maleável de locação de equipamentos.</p>
+                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -172,10 +173,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Sair o</span>
-                            </a>
+                            
                         </li>
 
                     </ul>

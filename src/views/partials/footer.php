@@ -33,11 +33,17 @@
 
     <!-- Page level plugins -->
     <script src="/allure-rent/src/views/assets/vendor/chart.js/Chart.min.js"></script>
-
+    
+    <!-- Page level custom scripts (DataTables)-->
+    <script src="/allure-rent/src/views/assets/js/demo/datatables-demo.js"></script>
+    <!-- Page level plugins (DataTables)-->
+    <script src="/allure-rent/src/views/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/allure-rent/src/views/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    
     <!-- Page level custom scripts -->
     <script src="/allure-rent/src/views/assets/js/demo/chart-area-demo.js"></script>
     <script src="/allure-rent/src/views/assets/js/demo/chart-pie-demo.js"></script>
-
+    
     <!-- Custom JS -->
     <script src="https://unpkg.com/imask"></script>
     <script src="/allure-rent/src/views/assets/js/template.js"></script>

@@ -32,5 +32,8 @@ $router->get('/movimento/devolucao', 'MovimentoController@devolucao');
 $router->post('/movimento/aluguel', 'MovimentoController@aluguelAction');
 $router->post('/movimento/devolucao', 'MovimentoController@devolucaoAction');
 
-
+/**
+ * Buscas / relatórios
+ */
 $router->get('/busca/serialEquip/{id}', 'BuscaController@serialEquip');
+$router->get('/busca/pendentes', 'Buscacontroller@pendentes');
