@@ -5,6 +5,7 @@ use \core\Controller;
 use \src\models\Setor;
 use \src\models\Equipamentos;
 use \src\models\Alugueis;
+use \src\models\Devolucoes;
 
 class MovimentoController extends Controller {
 
@@ -87,4 +88,28 @@ class MovimentoController extends Controller {
             'equipamentos' => $equipamentos
         ]);
     }
+
+    public function devolucaoAction(){
+        date_default_timezone_set('America/Fortaleza');
+        $id_equipamento = filter_input(INPUT_POST,'equipamento');
+        $data_limite = date('Ymd');
+        $hora_limite = date('His');
+        $aluguelCorrente = Alugueis::select()->where('id_equipamento',$id_equipamento)->where('devolvido',0)->execute();
+        $aluguelCorrente = $aluguelCorrente[0];
+        Alugueis::update()->set('devolvido',1)
+            ->where('id',$aluguelCorrente['id'])
+        ->execute();
+        Equipamentos::update()->set('disponivel',1)
+            ->where('id',$id_equipamento)
+        ->execute();
+        Devolucoes::insert([
+            'id_aluguel'=>$aluguelCorrente['id'],
+            'data_devolucao' => $data_limite,
+            'hora_devolucao' => $hora_limite
+        ])->execute();
+        $this->render('message',[
+            'message'=>'Equipamento devolvido',
+            'subMessage'=> 'Equipamento agora constará para alugueis'
+        ]);
+    } 
 }
