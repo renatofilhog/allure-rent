@@ -24,8 +24,13 @@ $router->post('/cadastro/equipamento', 'CadastroController@equipamentoAction');
  * Rotas para views (Movimentações)
  */
 $router->get('/movimento/aluguel', 'MovimentoController@aluguel');
+$router->get('/movimento/devolucao', 'MovimentoController@devolucao');
 
 /**
  * Rotas para Action (Movimentações)
  */
 $router->post('/movimento/aluguel', 'MovimentoController@aluguelAction');
+$router->post('/movimento/devolucao', 'MovimentoController@devolucaoAction');
+
+
+$router->get('/busca/serialEquip/{id}', 'BuscaController@serialEquip');

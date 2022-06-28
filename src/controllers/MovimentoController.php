@@ -73,4 +73,18 @@ class MovimentoController extends Controller {
         ]);
     }
 
+    public function devolucao() {
+        $equipamentos = Equipamentos::select()->where('disponivel',0)->execute();
+        if(count($equipamentos) == 0){
+            $equipamentos = [
+                1 =>
+                [
+                    'id' => '-1',
+                    'descricao' => 'Não há equipamentos alugados']
+            ];
+        }
+        $this->render('devolucao',[
+            'equipamentos' => $equipamentos
+        ]);
+    }
 }
