@@ -3,6 +3,7 @@ namespace src\controllers;
 
 use \core\Controller;
 use \src\models\Setor;
+use \src\models\Pessoa;
 use \src\models\Equipamentos;
 use \src\models\Alugueis;
 use \src\models\Devolucoes;
@@ -10,7 +11,7 @@ use \src\models\Devolucoes;
 class MovimentoController extends Controller {
 
     public function aluguel() {
-        $setores = Setor::select()->execute();
+        $pessoas = Pessoa::select()->execute();
         $equipamentos = Equipamentos::select()->where('disponivel',1)->execute();
         if(count($equipamentos) == 0){
             $equipamentos = [
@@ -21,14 +22,14 @@ class MovimentoController extends Controller {
             ];
         }
         $this->render('aluguel',[
-            'setores' => $setores,
+            'pessoas' => $pessoas,
             'equipamentos' => $equipamentos
         ]);
     }
 
     public function aluguelAction(){
         date_default_timezone_set('America/Fortaleza');
-        $id_setor = filter_input(INPUT_POST,'setor');
+        $id_pessoa = filter_input(INPUT_POST,'pessoa');
         $id_equipamento = filter_input(INPUT_POST,'equipamento');
         $data_limite = date('Ymd', strtotime(filter_input(INPUT_POST,'data_limite')));
         $hora_limite = date('His',strtotime(filter_input(INPUT_POST,'hora_limite')));
@@ -57,7 +58,7 @@ class MovimentoController extends Controller {
             exit;
         }
         Alugueis::insert([
-            'id_setor' => $id_setor,
+            'id_pessoa' => $id_pessoa,
             'id_equipamento' => $id_equipamento,
             'data_aluguel' => $data_aluguel,
             'hora_aluguel' => $hora_aluguel,

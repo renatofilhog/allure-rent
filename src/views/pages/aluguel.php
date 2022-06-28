@@ -15,12 +15,12 @@
                 </select>
             </div>
             <div class="form-group tpequip">
-                <span>Setor: </span>
-                <select name="setor" class="selectTpequip">
+                <span>Pessoa: </span>
+                <select name="pessoa" class="selectTpequip">
                     <?php 
-                        foreach($setores as $value):
+                        foreach($pessoas as $value):
                     ?>
-                    <option value="<?= $value['id']?>"><?= $value['nome_setor']?></option>
+                    <option value="<?= $value['id']?>"><?= $value['nome']?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

@@ -5,6 +5,7 @@ use \core\Controller;
 use \src\models\Setor;
 use \src\models\Equipamentos;
 use \src\models\Alugueis;
+use \src\models\Pessoa;
 
 class BuscaController extends Controller {
 
@@ -18,7 +19,8 @@ class BuscaController extends Controller {
         $data = [];
         foreach($Apendentes as $item){
             $equipamento = Equipamentos::select()->where('id',$item['id_equipamento'])->execute();
-            $setor = Setor::select()->where('id',$item['id_setor'])->execute();
+            $pessoa = Pessoa::select()->where('id',$item['id_pessoa'])->execute();
+            $setor = Setor::select()->where('id',$pessoa[0]['id_setor'])->execute();
             $data_aluguel = date('d/m/Y', strtotime($item['data_aluguel']));
             $hora_aluguel = date('H:i:s', strtotime($item['hora_aluguel']));
             $data_limite = date('d/m/Y', strtotime($item['data_limite']));
@@ -30,7 +32,7 @@ class BuscaController extends Controller {
             $data[] = [
                 'equipamento' => $equipamento[0]['descricao'],
                 'serial' => $equipamento[0]['serial'],
-                'pessoa' => 'Responsável',
+                'pessoa' => $pessoa[0]['nome'],
                 'setor' => $setor[0]['nome_setor'],
                 'data_aluguel' => $dataCompAluguel,
                 'data_limite' => $dataCompLimite
